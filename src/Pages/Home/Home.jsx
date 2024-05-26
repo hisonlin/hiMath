@@ -58,6 +58,8 @@ const Home = props => {
                         <FormControlLabel value="addition" control={<Radio />} label="Addition" />
                         <FormControlLabel value="substraction" control={<Radio />} label="Substraction" />
                         {/* <FormControlLabel value="mixed" control={<Radio />} label="Mixed" /> */}
+                        <FormControlLabel value="multiplication" control={<Radio />} label="Multiplication" />
+                        <FormControlLabel value="division" control={<Radio />} label="Division" />
                     </RadioGroup>
                 </div>
                 <div className='title'>
@@ -72,7 +74,7 @@ const Home = props => {
                         <FormControlLabel value="1" control={<Radio />} label="1" />
                         <FormControlLabel value="2" control={<Radio />} label="2" />
                         <FormControlLabel value="3" control={<Radio />} label="3" />
-                        <FormControlLabel value="4" control={<Radio />} label="4" />
+                        
                     </RadioGroup>
                 </div>
                 <div className='title'>
@@ -89,16 +91,31 @@ const Home = props => {
                         <FormControlLabel value="no" control={<Radio />} label="No" />
                     </RadioGroup>
                 </div>
+                {/* <div className='title'>
+                    <div>Decimal</div>
+                    <RadioGroup
+                        aria-label='Decimal'
+                        defaultValue="no"
+                        sx={{ display: 'flex', flexDirection: 'row'}}
+                        name="negative"
+                        onChange={handleRadioChange}
+                    >
+                        <FormControlLabel value="no" control={<Radio />} label="No" />
+                        <FormControlLabel value="1" control={<Radio />} label="1" />
+                        <FormControlLabel value="2" control={<Radio />} label="2" />
+                        <FormControlLabel value="3" control={<Radio />} label="3" />
+                    </RadioGroup>
+                </div> */}
                 <div className='title'>
                     <div>Number of Questions</div>
                     <Slider
                         aria-label="Number of Questions"
                         defaultValue={10}
                         valueLabelDisplay="auto"
-                        step={1}
+                        step={5}
                         marks
                         min={10}
-                        max={50}
+                        max={100}
                         onChange={handleSliderChange}
                     />
                 </div>

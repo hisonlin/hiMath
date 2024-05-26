@@ -53,6 +53,9 @@ const Questions = props => {
         if (problems === 'substraction') {
             answer = num1 - num2;
         }
+        if(problems === 'multiplication' || problems ==='division') {
+            answer = num1 * num2;
+        }
         return [num1, num2, answer];
     }
     useEffect(() => {
