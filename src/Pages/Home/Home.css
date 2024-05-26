@@ -1,0 +1,22 @@
+.form-container{
+    height: auto;
+    padding: 4vh;
+    margin: 15vh 5vw;
+    max-width: 800px;
+    border-radius: 30px;
+    border: 1px solid #000;
+ 
+}
+
+.title{
+    padding-top: 3vh;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 500px){
+    .title{
+        font-size: large;
+    }
+    
+}
