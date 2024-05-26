@@ -23,7 +23,7 @@ const QuestionCard = ({ type, problem }) => {
     const answerLength = answer.length;
 
     return (
-        <Paper elevation={1} sx={{ width: '220px', height: 'suto', fontSize: '35px', padding: '20px' }}>
+        <Paper elevation={1} sx={{ width: '220px', height: 'suto', fontSize: '30px', padding: '20px' }}>
             <div style={{ display: "flex", justifyContent: "end", letterSpacing: "5px" }}>
                 {problems === 'division' ? answer : num1}
             </div>
@@ -34,7 +34,7 @@ const QuestionCard = ({ type, problem }) => {
                 <div>
                     {(num2.split('').map((digit, idx) => (
                         <React.Fragment key={idx}>
-                            <input type="text" style={{ width: '6px', height: '10px', fontSize: '8px', textAlign: "end" }} />
+                            <input type="text" style={{ width: '10px', height: '10px', fontSize: '8px', textAlign: "end"}} />
                             {digit}
                         </React.Fragment>
                     )))}
@@ -46,7 +46,7 @@ const QuestionCard = ({ type, problem }) => {
                     {num2Length === 1 ?
                         <div style={{ display: "flex", justifyContent: "end", gap: '5px' }}>
                             {[...Array(answerLength)].map((_, index) => (
-                                <input type="number" style={{ width: '30px', fontSize: '35px', textAlign: "end", marginTop: "10px" }} />
+                                <input type="number" style={{ width: '35px', fontSize: '30px', textAlign: "end", marginTop: "10px" }} />
                             ))}
                         </div> :
                         <>
@@ -55,7 +55,7 @@ const QuestionCard = ({ type, problem }) => {
 
                                     <div style={{ display: "flex", justifyContent: "end", gap: '5px' }}>
                                         {[...Array(answerLength)].map((_, index) => (
-                                            <input type="number" style={{ width: '30px', fontSize: '35px', textAlign: "end", marginTop: "10px" }} />
+                                            <input type="number" style={{ width: '35px', fontSize: '30px', textAlign: "end", marginTop: "10px" }} />
                                         ))}
                                     </div>
                                 ))}
@@ -64,14 +64,14 @@ const QuestionCard = ({ type, problem }) => {
                                     <div>+</div>
                                     <div style={{ display: "flex", justifyContent: "end", gap: '5px' }}>
                                         {[...Array(answerLength)].map((_, index) => (
-                                            <input type="number" style={{ width: '30px', fontSize: '35px', textAlign: "end", marginTop: "10px" }} />
+                                            <input type="number" style={{ width: '35px', fontSize: '30px', textAlign: "end", marginTop: "10px" }} />
                                         ))}
                                     </div>
                                 </div>
                                 <div style={{ width: '100%', height: '5px', borderBottom: '2px solid #000' }}></div>
                                 <div style={{ display: "flex", justifyContent: "end", gap: '5px' }}>
                                     {[...Array(answerLength)].map((_, index) => (
-                                        <input type="number" style={{ width: '30px', fontSize: '35px', textAlign: "end", marginTop: "10px" }} />
+                                        <input type="number" style={{ width: '35px', fontSize: '30px', textAlign: "end", marginTop: "10px" }} />
                                     ))}
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ const QuestionCard = ({ type, problem }) => {
                 </div> :
                 <div style={{ display: "flex", justifyContent: "end", gap: '5px' }}>
                     {[...Array(problems==='division'?num2Length:answerLength)].map((_, index) => (
-                        <input type="number" style={{ width: '30px', fontSize: '35px', textAlign: "end", marginTop: "10px" }} />
+                        <input type="number" style={{ width: '35px', fontSize: '30px', textAlign: "end", marginTop: "10px" }} />
                     ))}
                 </div>}
 
