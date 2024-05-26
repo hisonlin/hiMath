@@ -13,7 +13,7 @@ const QuestionCard = ({ type, problem }) => {
             <div style={{ display: "flex", justifyContent: "end", letterSpacing: "5px" }}>
                 {num1}
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "2px solid #333"}}>
                 <div>
                     {problems === 'addition' ? '+' : '-'}
                 </div>
@@ -26,8 +26,9 @@ const QuestionCard = ({ type, problem }) => {
                     ))}
                 </div>
             </div>
-
-            <input type="text" style={{ width: '100%', fontSize: '40px', textAlign: "end", marginTop: "10px" }} />
+            <div style={{ display: "flex", justifyContent: "end"}}>
+            <input type="text" style={{ width: '70%', fontSize: '40px', textAlign: "end", marginTop: "10px" }} />
+            </div>
 
 
         </Paper>
