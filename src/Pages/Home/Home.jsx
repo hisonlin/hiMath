@@ -59,7 +59,7 @@ const Home = props => {
                         <FormControlLabel value="substraction" control={<Radio />} label="Substraction" />
                         {/* <FormControlLabel value="mixed" control={<Radio />} label="Mixed" /> */}
                         <FormControlLabel value="multiplication" control={<Radio />} label="Multiplication" />
-                        <FormControlLabel value="division" control={<Radio />} label="Division" />
+                        {/* <FormControlLabel value="division" control={<Radio />} label="Division" /> */}
                     </RadioGroup>
                 </div>
                 <div className='title'>

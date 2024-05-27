@@ -8,6 +8,17 @@ import SubmitButton from '../../Component/SubmitButton/SubmitButton'
 
 const Questions = props => {
 
+    const [answers, setAnswers] = useState([]);
+    console.log(answers);
+
+    const updateAnswers = (id, values) => {
+        setAnswers(prevAnswers => {
+            const newAnswers = [...prevAnswers];
+            newAnswers[id] = values;
+            return newAnswers;
+        });
+    };
+
     const params = useParams()
     const [problems, setProblems] = useState(params.problems);
     const [digit, setDigit] = useState(params.digit);
@@ -72,7 +83,7 @@ const Questions = props => {
         <>
             <div className='questions-container'>
                 {problemsArray.map((problem, index) => {
-                    return <QuestionCard key={index} type={problems} problem={problem} />
+                    return <QuestionCard key={index} id={index} type={problems} problem={problem} updateAnswers={updateAnswers}/>
                 })}
             </div>
             <div style={{display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
