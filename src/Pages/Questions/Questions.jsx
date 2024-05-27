@@ -9,6 +9,7 @@ import SubmitButton from '../../Component/SubmitButton/SubmitButton'
 const Questions = props => {
 
     const [answers, setAnswers] = useState([]);
+    const[buttonClicked, setButtonClicked] = useState(false);
     console.log(answers);
 
     const updateAnswers = (id, values) => {
@@ -77,6 +78,10 @@ const Questions = props => {
         setProblemsArray(problemsArray);
     }, [questions]);
 
+    const handleSubmit = () => {
+        setButtonClicked(true)
+    }
+
 
 
     return (
@@ -86,7 +91,7 @@ const Questions = props => {
                     return <QuestionCard key={index} id={index} type={problems} problem={problem} updateAnswers={updateAnswers}/>
                 })}
             </div>
-            <div style={{display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
             <SubmitButton />
             </div>
         </>

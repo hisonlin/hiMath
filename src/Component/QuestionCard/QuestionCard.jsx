@@ -32,8 +32,15 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
         updateAnswers(id, values);
     };
 
+    const handleInput = (e) => {
+        if (e.target.value.length > 1) {
+            e.target.value = e.target.value.slice(0, 1);
+        }
+        handleInputChange();
+    };
+
     return (
-        <Paper elevation={1} sx={{ width: '220px', height: 'auto', fontSize: '30px', padding: '20px' }}>
+        <Paper elevation={1} sx={{ width: 'auto', height: 'auto', fontSize: '30px', padding: '20px' }}>
             <div style={{ display: "flex", justifyContent: "end", letterSpacing: "5px" }}>
                 {problems === 'division' ? answer : num1}
             </div>
@@ -44,7 +51,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                 <div>
                     {(num2.split('').map((digit, idx) => (
                         <React.Fragment key={idx}>
-                            <input type="text" style={{ width: '5px', height: '10px', fontSize: '8px', textAlign: "end", padding: '0' }} />
+                            <input type="number" onInput={handleInput} style={{ width: '5px', height: '10px', fontSize: '8px', textAlign: "end", padding: '0' }} />
                             {digit}
                         </React.Fragment>
                     )))}
@@ -58,6 +65,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                                 <input
                                     key={index}
                                     type="number"
+                                    onInput={handleInput}
                                     style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px" }}
                                 />
                             ))}
@@ -70,6 +78,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                                             <input
                                                 key={subIndex}
                                                 type="number"
+                                                onInput={handleInput}
                                                 style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px" }}
                                             />
                                         ))}
@@ -82,6 +91,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                                             <input
                                                 key={index}
                                                 type="number"
+                                                onInput={handleInput}
                                                 style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px" }}
                                             />
                                         ))}
@@ -96,6 +106,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                                             type="number"
                                             style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px" }}
                                             onChange={handleInputChange}
+                                            onInput={handleInput}
                                         />
                                     ))}
                                 </div>
@@ -111,6 +122,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                             type="number"
                             style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px", padding: '0' }}
                             onChange={handleInputChange}
+                            onInput={handleInput}
                         />
                     ))}
                 </div>
