@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Paper } from '@mui/material';
 import './QuestionCard.css';
 
-const QuestionCard = ({ id, type, problem, updateAnswers }) => {
+const QuestionCard = ({ redBorder, id, type, problem, updateAnswers }) => {
     const userAnswerRef = useRef(null);
 
     const problems = type;
@@ -40,15 +40,15 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
     };
 
     return (
-        <Paper elevation={1} sx={{ width: 'auto', height: 'auto', fontSize: '30px', padding: '20px' }}>
-            <div style={{ display: "flex", justifyContent: "end", letterSpacing: "5px" }}>
+        <Paper elevation={1} sx={{ maxWidth: '250px', height: 'auto', fontSize: '35px', padding: '20px', border:redBorder?"1px solid red":"none"}}>
+            <div style={{ display: "flex", justifyContent: "end", letterSpacing: "8px" }}>
                 {problems === 'division' ? answer : num1}
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", borderBottom: "2px solid #333" }}>
                 <div>
                     {symbol}
                 </div>
-                <div>
+                <div style={{padding:"10px"}}>
                     {(num2.split('').map((digit, idx) => (
                         <React.Fragment key={idx}>
                             <input type="number" onInput={handleInput} style={{ width: '5px', height: '10px', fontSize: '8px', textAlign: "end", padding: '0' }} />
@@ -66,7 +66,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                                     key={index}
                                     type="number"
                                     onInput={handleInput}
-                                    style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px" }}
+                                    style={{ width: '20px', fontSize: '35px', textAlign: "end", marginTop: "10px" }}
                                 />
                             ))}
                         </div> :
@@ -79,7 +79,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                                                 key={subIndex}
                                                 type="number"
                                                 onInput={handleInput}
-                                                style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px" }}
+                                                style={{ width: '20px', fontSize: '35px', textAlign: "end", marginTop: "10px" }}
                                             />
                                         ))}
                                     </div>
@@ -92,7 +92,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                                                 key={index}
                                                 type="number"
                                                 onInput={handleInput}
-                                                style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px" }}
+                                                style={{ width: '20px', fontSize: '35px', textAlign: "end", marginTop: "10px" }}
                                             />
                                         ))}
                                     </div>
@@ -104,7 +104,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                                             key={index}
                                             id={index}
                                             type="number"
-                                            style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px" }}
+                                            style={{ width: '20px', fontSize: '35px', textAlign: "end", marginTop: "10px" }}
                                             onChange={handleInputChange}
                                             onInput={handleInput}
                                         />
@@ -120,7 +120,7 @@ const QuestionCard = ({ id, type, problem, updateAnswers }) => {
                             key={index}
                             id={index}
                             type="number"
-                            style={{ width: '20px', fontSize: '30px', textAlign: "end", marginTop: "10px", padding: '0' }}
+                            style={{ width: '20px', fontSize: '35px', textAlign: "end", marginTop: "10px", padding: '0' }}
                             onChange={handleInputChange}
                             onInput={handleInput}
                         />

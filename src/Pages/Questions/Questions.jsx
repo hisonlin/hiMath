@@ -88,11 +88,11 @@ const Questions = props => {
         <>
             <div className='questions-container'>
                 {problemsArray.map((problem, index) => {
-                    return <QuestionCard key={index} id={index} type={problems} problem={problem} updateAnswers={updateAnswers}/>
+                    return <QuestionCard redBorder={buttonClicked} key={index} id={index} type={problems} problem={problem} updateAnswers={updateAnswers}/>
                 })}
             </div>
             <div style={{display: 'flex', justifyContent: 'center'}}>
-            <SubmitButton />
+            <SubmitButton clickAction={handleSubmit}/>
             </div>
         </>
     )
